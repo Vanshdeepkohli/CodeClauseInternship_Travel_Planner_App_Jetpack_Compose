@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,8 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
 
-        // This makes it possible to draw behind the status bar.
-        WindowCompat.setDecorFitsSystemWindows(window,false)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
             TravelAppTheme {
@@ -42,7 +40,8 @@ class MainActivity : ComponentActivity() {
                         color = MaterialTheme.colors.background
                     ) {
 
-                        NavHost(navController = navController,
+                        NavHost(
+                            navController = navController,
                             startDestination = "splash"
                         ) {
 
